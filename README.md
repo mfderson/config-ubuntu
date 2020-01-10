@@ -24,8 +24,10 @@ cp -r flat-remix/Flat-Remix* ~/.icons/ && cp -r flat-remix-gtk/Flat-Remix-GTK* ~
 * Devdocs app
 * Discord
 * Postbird
+* Intellij
 
-### 5 - Configurando tema no vscode
+### 5 - Configurando IDEs
+#### 5.1 - vscode
 * Plugins a serem instalados
   * Dracula Official
   * Material Icon Theme
@@ -56,6 +58,16 @@ cp -r flat-remix/Flat-Remix* ~/.icons/ && cp -r flat-remix-gtk/Flat-Remix-GTK* ~
   "javascript.suggest.autoImports": false
 }
 ```
+#### 5.2 - Intellij
+  * Plugins
+    * Dracula Theme
+    * Rainbow Brackets
+    * Atom Material Icons
+    * Lombok
+  * Live reload
+    * File->Setting –> Build, Execution, Deployment –> Compiler–>Build project automatically is selected
+    * Press SHIFT+CTRL+A -> type: Registry... -> and check: compiler.automake.allow.when.app.running
+
 ### 6 - Configurando terminal
 ```
 sudo apt install zsh
@@ -204,118 +216,42 @@ sudo apt-get install gcc-multilib lib32z1 lib32stdc++6
   source .bashrc
   source .zshrc
   ```
-  
+* Instalar Genymotion (se não for debugar no cel físico)
+  * Instalar Virtualbox
+  ```
+  sudo apt-get install virtualbox
+  ```
+  * Baixar o genymotion [download](https://www.genymotion.com/fun-zone/)
+    ```
+    cd ~/Downloads && chmod +x genymotion*.bin 
+    ./genymotion-xxx.bin
+    ```
+  * Crie um emulador no Genymotion
+  * Conect o emulador ao ADB (Android Debug Bridge)
+    * adb connect IP_DO_SEU_EMULADOR:5555 -> (Para verificar o IP do dispositivo, basta esticar a janela do emulador, o IP estará no título da janela)
+    * adb devices -> (se aparecer o nome do seu dispositivo na lista, seu emulador foi conectado com sucesso)
 
-### 2 - Delete eslint
-Apagar arquivo do eslint se houver e instalar o eslint como depedência de desenvolvimento:
+### 10 - Java
+* Instalar jdk 11 - [fonte](https://www.digitalocean.com/community/tutorials/como-instalar-o-java-com-apt-no-ubuntu-18-04-pt)
 ```
-yarn add eslint -D
-yarn eslint --init
+sudo apt install default-jre
+java -version
+sudo apt install default-jdk
+javac -version
 ```
-### Obs: Após rodar o comando eslint --init, algumas opções deverão ser selecionadas:
-> How would you like to use ESLint? (Como você gostaria de utilizar o ESLint?)
-
- To check syntax, find problems, and enforce code style
-
-> What type of modules does your project user? (Quais tipos de módulos o seu projeto usa?)
-
-Javascript modules (import/export)
-
-> Which framework does your project use? (Qual framework o seu projeto usa?)
- 
-React, Vue ou None of theses
-
-> Does your project use TypeScript? (y/N) (O seu projeto usa TypeScript?)
- 
-N
-
-> Where does your code run? (Onde irá rodar seu projeto?)
-
-Browser ou Node (use a barra de espaço para desmarcar uma opção. No caso do react native, desmarque todas.)
-
-> Use a popular style guide (Utilize uma guia de estilo popular)
-
-Use a popular style guide
-
-> Which style guide do you want to follow? (Qual guia de estilo deseja seguir?)
-
-Airbnb 
-
-> What format do you want your config file to be in? (Em que formato você deseja que o seu arquivo de configuração esteja?)
-
-JavaScript
-
-> Would you like to install them now with npm? (Y/n) (Gostaria de instalar as dependências com npm?)
-
-Y
-
-
-
-### 3 - Delete package-lock
-Apagar aquivo ***package-lock.json*** para associar as dependências ao arquivo ***yarn.lock*** e reinstalar utilizando o comando abaixo:
+* Instalar jdk 13
+  * Faça o [download](jdk.java.net/13)
+  ```
+  cd ~/Downloads && tar xvf openjdk-13*_bin.tar.gz
+  sudo mv ~/Downloads/openjdk-13* /usr/lib/jvm
+  ```
+* Adicionar o jdk ao java update alternatives
 ```
-yarn 
+sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-13.0.1/bin/java 1
+sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk-13.0.1/bin/javac 1
+sudo update-alternatives --config java
+sudo update-alternatives --config javac
 ```
-
-### 4 - Install Prettier
-Instalar dependências do prettier e babel-eslint conforme abaixo:
-```
-yarn add prettier eslint-config-prettier eslint-plugin-prettier babel-eslint -D 
-```
-
-### 5 - Add to eslintrc
-No arquivo ***.eslintrc.js*** copiar as configurações:
-```
-module.exports = {
-  env: {
-    es6: true,
-  },
-  extends: ['plugin:react/recommended', 'airbnb', 'prettier/react'],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
-  },
-  parser: 'babel-eslint',
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 2018,
-    sourceType: 'module',
-  },
-  plugins: ['react', 'prettier'],
-  rules: {
-    'linebreak-style': ['error', 'windows'],
-    'linebreak-style': 0,
-    'prettier/prettier': 'error',
-    'react/jsx-filename-extension': [
-      'warn',
-      {
-        extensions: ['.jsx', '.js'],
-      },
-    ],
-    'import/prefer-default-export': 'off',
-  },
-};
-```
-
-### 6 - Add to prettierrc
-Criar arquivo ***.prettierrc*** com configurações de single quote:
-```
-{
-  "singleQuote": true,
-  "trailingComma": "es5"
-}
-```
-
-### 7 - Add to settings
-Para que as configurações sejam aplicadas ao salvar o arquivo, no arquivo principal de configurações do VSCODE ***settings.json*** (ctrl + shift + P) adicione a seguinte linha:
-```
-"editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    }
-``` 
 
 
 Ambiente configurado! Só começar a codar. :coffee: :raised_hands: 
