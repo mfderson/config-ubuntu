@@ -34,6 +34,8 @@ cp -r flat-remix/Flat-Remix* ~/.icons/ && cp -r flat-remix-gtk/Flat-Remix-GTK* ~
   * Color Highlight
   * Bracket Pair Colorizer
   * Rocketseat ReactJS e React Native
+  * DotEnv
+  * Markdown All in One
 * Abrir o settings.json e colar o conteúdo abaixo
 ```
 {
