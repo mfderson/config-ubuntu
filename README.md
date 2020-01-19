@@ -25,6 +25,7 @@ cp -r flat-remix/Flat-Remix* ~/.icons/ && cp -r flat-remix-gtk/Flat-Remix-GTK* ~
 * Discord
 * Postbird
 * Intellij
+* Reactotron (baixar o arquivo .deb)
 
 ### 5 - Configurando IDEs
 #### 5.1 - vscode
