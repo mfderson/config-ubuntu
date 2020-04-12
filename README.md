@@ -258,5 +258,9 @@ sudo update-alternatives --config java
 sudo update-alternatives --config javac
 ```
 
+### 11 - Maven
+```
+sudo apt-get -y install maven
+```
 
 Ambiente configurado! Só começar a codar. :coffee: :raised_hands: 
