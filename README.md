@@ -134,8 +134,18 @@ npm -v
 node -v
 ```
 * Instalar o yarn
+	- Configurarar o repositórios do yarn
+```bash
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 ```
-npm install -g yarn
+	- Execute o comando para instalar o yarn sem instalar o node novamente
+```bash
+sudo apt update && sudo apt install --no-install-recommends yarn
+```
+	- Testar
+```bash
+yarn -v
 ```
 
 ### 8 - Docker
@@ -188,7 +198,7 @@ sudo docker ps
   docker ps
   ```
   
-### 9 - React Native - [fonte](https://docs.rocketseat.dev/)
+### 9 - React Native - [fonte](https://react-native.rocketseat.dev/)
 * Instalar react-native-cli
 ```
 npm install -g react-native-cli
@@ -212,11 +222,20 @@ sudo apt-get install gcc-multilib lib32z1 lib32stdc++6
   * [Download](https://developer.android.com/studio/#downloads)
     * Em "Command line tools only" baixe a SDK
   * Crie os diretório
-  ```
+  ```bash
   cd ~
 	mkdir Android
 	cd Android
 	mkdir Sdk
+  ```
+  * Adicione as variáveis de ambiente no seu .zshrc ou .bashrc
+  ```bash
+  export JAVA_HOME=CAMINHO_ANOTADO_COM_SUA_VERSÃO
+  export ANDROID_HOME=~/Android/Sdk
+  export PATH=$PATH:$ANDROID_HOME/emulator
+  export PATH=$PATH:$ANDROID_HOME/tools
+  export PATH=$PATH:$ANDROID_HOME/tools/bin
+  export PATH=$PATH:$ANDROID_HOME/platform-tools
   ```
   * Extraia o arquivo baixado para ~/Android/Sdk
   * Adicione as linhas abaixo no ~/.bashrc e ~/.zshrc
@@ -241,22 +260,22 @@ sudo apt-get install gcc-multilib lib32z1 lib32stdc++6
 
 ### 10 - Java
 * Instalar jdk 11 - [fonte](https://www.digitalocean.com/community/tutorials/como-instalar-o-java-com-apt-no-ubuntu-18-04-pt)
-```
+```bash
 sudo apt install default-jre
 java -version
 sudo apt install default-jdk
 javac -version
 ```
-* Instalar jdk 13
-  * Faça o [download](jdk.java.net/13)
-  ```
-  cd ~/Downloads && tar xvf openjdk-13*_bin.tar.gz
-  sudo mv ~/Downloads/openjdk-13* /usr/lib/jvm
+* Instalar jdk 14
+  * Faça o [download](https://jdk.java.net/14/)
+  ```bash
+  cd ~/Downloads && tar xvf openjdk-14*_bin.tar.gz
+  sudo mv ~/Downloads/jdk-14** /usr/lib/jvm
   ```
 * Adicionar o jdk ao java update alternatives
 ```
-sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-13.0.1/bin/java 1
-sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk-13.0.1/bin/javac 1
+sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-14.0.1/bin/java 1
+sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk-14.0.1/bin/javac 1
 sudo update-alternatives --config java
 sudo update-alternatives --config javac
 ```
