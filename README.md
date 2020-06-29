@@ -352,7 +352,11 @@ sudo update-alternatives --config javac
 * Setar o java home no VSCode
   * No arquivo settings.json adicionar?
   ```json
-  "java.home": "/usr/lib/jvm/jdk-14.0.1"
+  "java.home": "/usr/lib/jvm/jdk-14.0.1",
+
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java",
+  },
   ```
 
 ### 11 - Maven
