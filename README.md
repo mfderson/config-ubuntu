@@ -39,6 +39,9 @@ cp -r flat-remix/Flat-Remix* ~/.icons/ && cp -r flat-remix-gtk/Flat-Remix-GTK* ~
   * Markdown All in One
   * vscode-styled-components
   * Arruma a ordem dos imports: [plugin](https://www.npmjs.com/package/eslint-plugin-import-helpers)
+  * Java Extension Pack
+  * Spring Boot Extension Pack
+  * Lombok Annotations Support for VS Code
 * Abrir o settings.json e colar o conteúdo abaixo
 ```json
 {
@@ -337,6 +340,7 @@ sudo apt-get install gcc-multilib lib32z1 lib32stdc++6
   cd ~/Downloads && tar xvf openjdk-14*_bin.tar.gz
   sudo mv ~/Downloads/jdk-14** /usr/lib/jvm
   ```
+
 * Adicionar o jdk ao java update alternatives
 ```bash
 sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-14.0.1/bin/java 1
@@ -344,6 +348,12 @@ sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk-14.0.1/
 sudo update-alternatives --config java
 sudo update-alternatives --config javac
 ```
+
+* Setar o java home no VSCode
+  * No arquivo settings.json adicionar?
+  ```json
+  "java.home": "/usr/lib/jvm/jdk-14.0.1"
+  ```
 
 ### 11 - Maven
 ```bash
