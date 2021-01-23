@@ -10,14 +10,7 @@ sudo apt install git -y
 sudo apt install fonts-firacode
 sudo apt-get install gnome-tweak-tool
 ```
-### 3 - Instalação do tema flat-remix (opcional)
-```bash
-git clone https://github.com/daniruiz/flat-remix
-git clone https://github.com/daniruiz/flat-remix-gtk
-mkdir -p ~/.icons && mkdir -p ~/.themes
-cp -r flat-remix/Flat-Remix* ~/.icons/ && cp -r flat-remix-gtk/Flat-Remix-GTK* ~/.themes/
-```
-### 4 - Softwares a serem instalados
+### 3 - Softwares a serem instalados
 * vscode (sudo dpkg -i <file.deb>)
 * Postman
 * Insomnia
@@ -28,9 +21,9 @@ cp -r flat-remix/Flat-Remix* ~/.icons/ && cp -r flat-remix-gtk/Flat-Remix-GTK* ~
 * Reactotron (baixar o arquivo .deb)
 
 ### 5 - Configurando IDEs
-#### 5.1 - vscode
+#### 5.1 - vscode - [fonte](https://www.notion.so/Visual-Studio-Code-e0d3c48eebdd4df586c4ba8c12cf5a7a)
 * Plugins a serem instalados
-  * Dracula Official
+  * Omni
   * Material Icon Theme
   * Color Highlight
   * Bracket Pair Colorizer
@@ -39,33 +32,8 @@ cp -r flat-remix/Flat-Remix* ~/.icons/ && cp -r flat-remix-gtk/Flat-Remix-GTK* ~
   * Markdown All in One
   * vscode-styled-components
   * Arruma a ordem dos imports: [plugin](https://www.npmjs.com/package/eslint-plugin-import-helpers)
-  * Java Extension Pack
-  * Spring Boot Extension Pack
-  * Lombok Annotations Support for VS Code
 * Abrir o settings.json e colar o conteúdo abaixo
-```json
-{
-  "workbench.colorTheme": "Dracula",
-  "editor.fontFamily": "Fira Code",
-  "editor.fontLigatures": true,
-  "editor.fontSize": 14,
-  "workbench.iconTheme": "material-icon-theme",
-  "editor.rulers": [80, 120],
-  "editor.renderLineHighlight": "gutter",
-  "editor.tabSize": 2,
-  "terminal.integrated.fontSize": 14,
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact"
-  },
-  "emmet.syntaxProfiles": {
-    "javascript": "jsx"
-  },
-  "javascript.updateImportsOnFileMove.enabled": "never",
-  "editor.parameterHints.enabled": false,
-  "breadcrumbs.enabled": true,
-  "javascript.suggest.autoImports": false
-}
-```
+
 #### 5.2 - Intellij
   * Plugins
     * Dracula Theme
@@ -77,16 +45,8 @@ cp -r flat-remix/Flat-Remix* ~/.icons/ && cp -r flat-remix-gtk/Flat-Remix-GTK* ~
     * Press SHIFT+CTRL+A -> type: Registry... -> and check: compiler.automake.allow.when.app.running
 
 ### 6 - Configurando terminal
-```bash
-sudo apt install zsh
-sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
-```
-* Abra o arquivo .zshrc e cole no final
-```bash
-set ZSH_THEME="spaceship"
-```
+[fonte](https://blog.rocketseat.com.br/terminal-com-oh-my-zsh-spaceship-dracula-e-mais/)
+
 ```bash
 mkdir ~/.zplugin
 git clone https://github.com/zdharma/zplugin.git ~/.zplugin/bin
@@ -118,10 +78,7 @@ zplugin light zsh-users/zsh-completions
 zplugin light zdharma/fast-syntax-highlighting
 ```
 ### 7 - Instalando node, npm e yarn
-* Instalar primeiro nvm
-```bash
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
-```
+* Instalar primeiro nvm (gerenciador de pacotes do node) [fonte](https://github.com/nvm-sh/nvm)
   * Add in .zshrc and .bashrc
 * Procurar qual versão estável do node no site e...
 ```bash
@@ -130,6 +87,7 @@ nvm install <numero_da_versao>
 * Setar versão padrão do node
 ```bash
 nvm alias default <numero_da_versao>
+nvm use <numero_da_versao>
 ```
 * Testar
 ```bash
