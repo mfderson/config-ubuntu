@@ -54,28 +54,22 @@ git clone https://github.com/zdharma/zplugin.git ~/.zplugin/bin
 * Abra o arquivos .zshrc e cole no final
 ```
 SPACESHIP_PROMPT_ORDER=(
-  user
-  dir
-  host
-  git
-  exec_time
-  line_sep
-  jobs
-  exit_code
-  char
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  hg            # Mercurial section (hg_branch  + hg_status)
+  exec_time     # Execution time
+  line_sep      # Line break
+  vi_mode       # Vi-mode indicator
+  jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
 )
-
+SPACESHIP_USER_SHOW=always
 SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_CHAR_SYMBOL=">"
+SPACESHIP_CHAR_SYMBOL="❯"
 SPACESHIP_CHAR_SUFFIX=" "
-
-source ~/.zplugin/bin/zplugin.zsh
-autoload -Uz _zplugin
-(( ${+_comps} )) && _comps[zplugin]=_zplugin
-
-zplugin light zsh-users/zsh-autosuggestions
-zplugin light zsh-users/zsh-completions
-zplugin light zdharma/fast-syntax-highlighting
 ```
 ### 7 - Instalando node, npm e yarn
 * Instalar primeiro nvm (gerenciador de pacotes do node) [fonte](https://github.com/nvm-sh/nvm)
