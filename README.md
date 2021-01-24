@@ -32,7 +32,6 @@ sudo apt-get install gnome-tweak-tool
   * Markdown All in One
   * vscode-styled-components
   * Arruma a ordem dos imports: [plugin](https://www.npmjs.com/package/eslint-plugin-import-helpers)
-* Abrir o settings.json e colar o conteúdo abaixo
 
 #### 5.2 - Intellij
   * Plugins
