@@ -98,36 +98,7 @@ yarn -v
 ```
 
 ### 8 - Docker
-* Procure por: "docker ce" no google
-  * https://docs.docker.com/install/linux/docker-ce/ubuntu/
-* Desinstale versões anteriores
-```bash
-sudo apt-get remove docker docker-engine docker.io containerd runc
-sudo apt-get update && sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
-```
-* Add Docker’s official GPG key
-```bash
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo apt-key fingerprint 0EBFCD88
-sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   bionic \
-   stable"
-```
-* Install Docker CE
-```bash
-sudo apt-get update && sudo apt-get install docker-ce docker-ce-cli containerd.io
-```
-  * List Docker CE versions
-```bash
-apt-cache madison docker-ce
-sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io
-```
-  * Testar
-```bash
-sudo docker run hello-world
-sudo docker ps
-```
+[Fonte](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
 * Manage Docker as a non-root user
   * Create the docker group
   ```bash
