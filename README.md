@@ -90,12 +90,7 @@ node -v
 * Instalar o yarn
 	- Configurarar o repositórios do yarn
 ```bash
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-```
-	- Execute o comando para instalar o yarn sem instalar o node novamente
-```bash
-sudo apt update && sudo apt install --no-install-recommends yarn
+npm install -g yarn
 ```
 	- Testar
 ```bash
